@@ -1,0 +1,9 @@
+runtime: node12
+service: swagger
+handlers:
+  - url: /
+    static_files: index.html
+    upload: index.html
+  - url: /(.+\.(html|css|js|gif|png|jpg|map|yaml|yml|))$
+    static_files: \1
+    upload: (.+\.(html|css|js|gif|png|jpg|map|yaml|yml|))$
