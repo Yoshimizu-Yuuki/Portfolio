@@ -1,0 +1,23 @@
+.brind{
+    text-align: center;
+}
+
+.brind h1{
+    font-size:300%;
+    font-weight: 800;
+    font-family: 'Oswald', sans-serif;
+    color:#fff;
+
+    text-shadow:1px 1px 0 #000;
+}
+
+.brind ul li{
+    font-size:200%;
+    font-weight: 800;
+    list-style: none;
+
+    color:#fff;
+
+    text-shadow:2px 2px 0 #000;
+    margin:-2px;
+}
