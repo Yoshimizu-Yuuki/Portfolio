@@ -1,0 +1,35 @@
+.wrap{
+    width:50%;
+    margin:0 auto;
+}
+
+.piece{
+    border-bottom:solid 1px #fff;
+}
+
+.piece h3{
+    font-size: 200%;
+    margin-bottom:0;
+    text-shadow:
+    1px 1px 0 #fff, -1px -1px 0 #fff,
+    -1px 1px 0 #fff, 1px -1px 0 #fff;
+}
+
+.piece p{
+    margin:0;
+    color:#fff;
+    text-shadow:
+    1px 1px 0 #000, -1px -1px 0 #000,
+    -1px 1px 0 #000, 1px -1px 0 #000;
+}
+
+.tags li{
+    font-size:150%;
+    font-weight: 800;
+    list-style: none;
+
+    display:inline-block;
+    background-color:white;
+    padding:5px;
+    border-radius: 10px;
+}
