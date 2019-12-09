@@ -3,13 +3,13 @@ const app = express()
 
 const { Pool, Client } = require('pg')
 const connectionString = 'postgres://postgres:postgres@35.189.131.252:5432/postgres'
-const pool = new Pool({
-  connectionString: connectionString,
-})
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  pool.end()
-})
+// const pool = new Pool({
+//   connectionString: connectionString,
+// })
+// pool.query('SELECT NOW()', (err, res) => {
+//   console.log(err, res)
+//   pool.end()
+// })
 
 
 app.get('/', (req, res) => res.send('Hello World!'))

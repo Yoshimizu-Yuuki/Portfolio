@@ -4,5 +4,5 @@ WORKDIR /api
 
 COPY ./ /api
 
-RUN npm install
-CMD ["npm" "run start"]
+RUN npm install \
+&& npm run start
