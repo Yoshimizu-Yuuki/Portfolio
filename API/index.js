@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 const { Pool, Client } = require('pg')
-const connectionString = 'postgresql://postgres:postgres@db:5432/testdb'
+const connectionString = 'postgres://postgres:postgres@35.189.131.252:5432/postgres'
 const pool = new Pool({
   connectionString: connectionString,
 })
@@ -30,7 +30,7 @@ URL設計
 /tag/:resume_id⇒resume_idに応じたタグの全件取得
 */
 
-app.get('/resume',(req, res) => 
+app.post('/resume',(req, res) => 
 {
     const client = new Client({
         connectionString: connectionString,
@@ -40,6 +40,37 @@ app.get('/resume',(req, res) =>
         res.send(result.rows);
         client.end()
     })
+});
+
+
+app.post('/tag/:resume_id',(req, res) => 
+{
+    const client = new Client({
+        connectionString: connectionString,
+      })
+      client.connect()
+
+      //resume_idを使ってクエリ
+      client.query({
+        name: 'fetch-user',
+        text: 'SELECT * FROM tag WHERE resume_id = $1',
+        values: [req.param('resume_id')]
+      }, (err, result) => {
+        res.send(result.rows);
+        client.end()
+    })
+});
+
+app.get('/resume',(req, res) => 
+{
+    const client = new Client({
+      connectionString: connectionString,
+    })
+    client.connect()
+    client.query('SELECT * FROM resume', (err, result) => {
+      res.send(result.rows);
+      client.end()
+  })
 });
 
 

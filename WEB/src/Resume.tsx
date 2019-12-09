@@ -1,28 +1,15 @@
 import React from 'react';
 import './Home.css';
 import './Resume.css';
+import ResumeSection from './component/resume_section';
+
 
 const Resume: React.FC = () => {
   return (
     <div className="Resume">
         <div className="wrap">
 
-          <div className="piece">
-              <h3>2017年3月　TECH.C卒業</h3>
-              <p>・ゲームプログラミングしたり、企画立ててゲーム制作に携わる</p>
-              <div>
-                  <ul className="tags">
-                      <li>#C++</li>
-                      <li>#Direct3D11</li>
-                      <li>#Direct2D</li>
-                      <li>#DirectWrite</li>
-                      <li>#HLSL</li>
-                      <li>#C#</li>
-                      <li>#Unity</li>
-                      <li>#プランナー</li>
-                  </ul>
-              </div>
-          </div>
+            <ResumeSection resume_id={1} join_date={"2017年3月"} company={"東京デザインテクノロジーセンター専門学校"} summary={"学校卒業する"}/>
 
           <div className="piece">
               <h3>2017年10月　株式会社コーエーテクモゲームス入社</h3>
