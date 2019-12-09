@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 
 const { Pool, Client } = require('pg')
-const connectionString = 'postgres://postgres:postgres@35.189.131.252:5432/postgres'
+//const connectionString = 'postgres://postgres:postgres@35.189.131.252:5432/postgres'
+const connectionString = 'postgres://postgres:postgres@10.105.48.3:5432/postgres'
 // const pool = new Pool({
 //   connectionString: connectionString,
 // })
