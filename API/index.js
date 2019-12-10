@@ -38,6 +38,7 @@ app.post('/resume',(req, res) =>
       })
       client.connect()
       client.query('SELECT * FROM resume', (err, result) => {
+        res.setHeader("Access-Control-Allow-Origin","http://yoshimizuyuuki.com");
         res.send(result.rows);
         client.end()
     })
@@ -57,6 +58,7 @@ app.post('/tag/:resume_id',(req, res) =>
         text: 'SELECT * FROM tag WHERE resume_id = $1',
         values: [req.param('resume_id')]
       }, (err, result) => {
+        res.setHeader("Access-Control-Allow-Origin","http://yoshimizuyuuki.com");
         res.send(result.rows);
         client.end()
     })
@@ -69,6 +71,7 @@ app.get('/resume',(req, res) =>
     })
     client.connect()
     client.query('SELECT * FROM resume', (err, result) => {
+      res.setHeader("Access-Control-Allow-Origin","http://yoshimizuyuuki.com");
       res.send(result.rows);
       client.end()
   })
@@ -88,6 +91,7 @@ app.get('/tag/:resume_id',(req, res) =>
         text: 'SELECT * FROM tag WHERE resume_id = $1',
         values: [req.param('resume_id')]
       }, (err, result) => {
+        res.setHeader("Access-Control-Allow-Origin","http://yoshimizuyuuki.com");
         res.send(result.rows);
         client.end()
     })

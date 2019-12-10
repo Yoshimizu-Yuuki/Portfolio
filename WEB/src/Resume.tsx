@@ -20,6 +20,13 @@ class Resume extends React.Component<Props,State>{
     }
 
     componentDidMount(){
+        axios.interceptors.response.use((config: any) => {
+            config.headers = {
+                'Origin': 'http://yoshimizuyuuki.com'
+            };
+            return config;
+        });
+
         axios.get('http://34.85.20.103:9000/resume', {})
         .then(this.getQuery)
         .catch(function(error){

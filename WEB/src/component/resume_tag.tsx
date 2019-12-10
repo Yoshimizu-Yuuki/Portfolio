@@ -2,6 +2,7 @@ import React from 'react';
 import '../Home.css';
 import '../Resume.css';
 import axios from 'axios'
+import Axios from 'axios';
 
 type Props = {
     resume_id:number
@@ -21,9 +22,15 @@ class ResumeTag extends React.Component<Props,State>{
     tags = new Array();
 
     componentDidMount(){
-        
-        axios.get('http://34.85.20.103:9000/tag/' + this.props.resume_id, {
-        })
+
+        axios.interceptors.response.use((config: any) => {
+            config.headers = {
+                'Origin': 'http://yoshimizuyuuki.com'
+            };
+            return config;
+        });
+
+        axios.post('http://34.85.20.103:9000/tag/' + this.props.resume_id,{})
         .then(this.getQuery)
         .catch(function(error:any){
             console.log(error);
