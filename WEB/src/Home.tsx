@@ -17,7 +17,9 @@ const Home: React.FC = () => {
             </ul>
         </div>
         <div className="myfooter">
-            <h1 className="myh2">小説が書けて動画編集も出来るエンジニア</h1>
+            <h1 className="myh2">小説が書けて</h1>
+            <h1 className="myh2">動画編集も出来る </h1>
+            <h1 className="myh2">エンジニア</h1>
         </div>
     </div>
   );
