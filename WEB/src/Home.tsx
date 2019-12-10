@@ -5,7 +5,7 @@ const Home: React.FC = () => {
   return (
     <div className="Home">
         <div className="typetext">
-            <h1 className="myh1">YoshimizuYuuki's</h1>
+            <h1 className="myh1">Yoshimizu Yuuki's</h1>
             <h1 className="myh1">Portfolio SITE</h1>
         </div>
         <div className="mylinks">
