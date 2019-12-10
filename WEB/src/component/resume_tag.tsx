@@ -30,7 +30,7 @@ class ResumeTag extends React.Component<Props,State>{
             return config;
         });
 
-        axios.post('http://34.85.20.103:9000/tag/' + this.props.resume_id,{})
+        axios.get('http://34.85.20.103:9000/tag/' + this.props.resume_id,{})
         .then(this.getQuery)
         .catch(function(error:any){
             console.log(error);
